@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search Flower</title>
+
+<style>
+body{font-family:Arial;background:#fdf6f9;}
+.container{
+    width:450px;margin:50px auto;background:white;
+    padding:25px;border-radius:15px;
+}
+h1{text-align:center;color:#d63384;}
+input{width:100%;padding:10px;}
+button{
+    margin-top:15px;width:100%;
+    background:#d63384;color:white;
+    border:none;padding:10px;
+}
+pre{
+    background:#f4f4f4;
+    padding:10px;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Search Flower</h1>
+
+<input type="text" id="fid" placeholder="Enter Flower ID">
+
+<button onclick="searchFlower()">Search</button>
+
+<pre id="result"></pre>
+
+</div>
+
+<script>
+function searchFlower(){
+    let id = document.getElementById("fid").value;
+
+    fetch("./rest/WebFlower/searchFlower/" + id)
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("result").textContent =
+        JSON.stringify(data, null, 2);
+    });
+}
+</script>
+
+</body>
+</html>

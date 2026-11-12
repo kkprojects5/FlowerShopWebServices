@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Place Order</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#fdf6f9;
+}
+
+.container{
+    width:450px;
+    margin:60px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+}
+
+h2{
+    text-align:center;
+    color:#d63384;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+select, input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    margin-top:15px;
+    padding:10px;
+    background:#d63384;
+    color:white;
+    border:none;
+    border-radius:6px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Place Flower Order</h2>
+
+<form method="post" action="./rest/WebFlower/placeOrder">
+
+<label>Flower</label>
+<select name="flowerId">
+    <option value="F101">Rose ($5.00)</option>
+    <option value="F102">Tulip ($4.00)</option>
+    <option value="F103">Lily ($6.50)</option>
+    <option value="F104">Orchid ($8.00)</option>
+    <option value="F105">Daisy ($3.50)</option>
+</select>
+
+<label>Quantity</label>
+<input type="number" name="quantity" min="1" required>
+
+<button type="submit">Place Order</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
